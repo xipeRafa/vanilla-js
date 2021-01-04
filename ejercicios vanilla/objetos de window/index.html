@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+
+  
+    <meta charset="utf-8" />
+    <title>Objeto window
+    </title>
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <link href="css/estilos.css" rel="stylesheet" />
+    <link href="https://file.myfontastic.com/QVGkcMXXjo6tzwASp767kS/icons.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta content="" http-equiv="refresh" />
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+    <hr>
+    <hr>
+    <h5>1. Eventos onFocus y onBlur (seccion 4 linea 31)
+Implementar un formulario que solicite la carga del nombre y la edad de una persona. Cuando el control tome foco borrar el contenido actual, al abandonar el mismo, mostrar un mensaje de alerta si el mismo está vacío. Mostrar en las propiedades value de los controles text los mensajes "nombre" y "mail" respectivamente.</h5>
+<hr>
+<hr>
+   
+<script>
+        function vaciar(control)
+        {
+          control.value='';
+        }
+        function verificarEntrada(control)
+        {
+          if (control.value=='')
+            alert('Debe ingresar datos');
+        }
+      </script>
+      <form>
+        <input type="text" id="nombre" onFocus="vaciar(this)" 
+               onBlur="verificarEntrada(this)" value="nombre"><br>
+        <input type="text" id="edad" onFocus="vaciar(this)" 
+               onBlur="verificarEntrada(this)" value="mail">
+        <br>
+        <input type="button" value="Confirmar">
+      </form>
+      <hr>
+      <hr>
+      <h5> 2. Confeccionar una página de visitas a un sitio, solicitar ingresar el nombre de una persona, su mail y los comentarios (TEXTAREA). Mostrar luego llamando a la función alert los datos ingresados.</h5>
+
+      <script>
+            function verificar(control)
+            {
+              if (control.value.length<7 || control.value.length>20)
+              {
+                alert('cantidad de caracteres no valido en la clave(deben ser entre 7-20 caracteres)');
+              }
+            }
+          </script>
+          
+          <form>
+            Ingrese nombre de usuario:
+            <input type="text" id="usuario"><br>
+            Ingrese clave:
+            <input type="password" id="clave" onBlur="verificar(this)"><br>
+            <input type="button" value="confirmar">
+          </form>
+          
+      <hr>
+      <hr>
+      <h5>3.-Eventos onMouseOver y onMouseOut (seccion 4 linea 32)
+            Implementaremos una función que cambie el color con un valor que llegue como parámetro. Cuando retiramos la flecha del mouse volvemos a pintar de negro el fondo de cuadrado:
+            </h5>
+            <script>
+                    function pintar(col)
+                    {
+                      document.getElementById('cuadrado1').style.backgroundColor=col;
+                    }
+                  </script>
+                  
+                  <a href="#" onMouseOver="pintar('#f00')" onMouseOut="pintar('#000')">Rojo</a> -
+                  <a href="#" onMouseOver="pintar('#0f0')" onMouseOut="pintar('#000')">Verde</a> -
+                  <a href="#" onMouseOver="pintar('#00f')" onMouseOut="pintar('#000')">Azul</a>
+                  <div id="cuadrado1" style="background:#000;width:200px;height:200px"></div>
+                  
+            
+      <hr>
+      <hr>
+      <h5>4. Modificar el segundo problema resuelto (las casillas de la tabla que cambian el color cuando ingresamos con el mouse) para permitir llamar mediante hipervínculos a distintos programas que administran web-mail (gmail, hotmail y yahoo)
+        </h5>
+
+        <script>
+                function pintar(objeto,col)
+                {
+                  objeto.style.backgroundColor = col;
+                }
+              </script>
+              
+              <table border="1">
+                <tr>
+                  <td onMouseOver="pintar(this,'#ff0000')" onMouseOut="pintar(this,'#ffffff')">
+                    <a href="http://www.outlook.com">Outlook</a>
+                  </td>
+                  <td onMouseOver="pintar(this,'#00ff00')" onMouseOut="pintar(this,'#ffffff')">
+                    <a href="http://www.yahoo.com">Yahoo</a>
+                  </td>
+                  <td onMouseOver="pintar(this,'#0000ff')" onMouseOut="pintar(this,'#ffffff')">
+                    <a href="http://www.gmail.com">GMail</a>
+                  </td>
+                </tr>
+              </table>
+              
+      <hr>
+      <hr>
+      <h5>5.-Evento onLoad activarPrimerControl (seccion 4 linea 33)
+        </h5>
+
+ <!--        function activarPrimerControl()
+<body onLoad="activarPrimerControl()">
+
+<script>
+  function activarPrimerControl()
+  {
+    document.getElementById('nombre').focus();
+  }
+</script>
+
+<form>
+  Ingrese su nombre:
+  <input type="text" id="nombre"><br>
+  Ingrese su edad:
+  <input type="text" id="edad"><br>
+  <input type="button" value="Confirmar">
+</form>
+</body> -->
+
+      <hr>
+      <hr>
+      <h5> 6. Confeccionar una página que muestre un mensaje con la función alert inmediatamente después que se cargue.
+        </h5>
+
+        <!-- <body onLoad="mostrarMensaje()">
+
+                <script>
+                  function mostrarMensaje()
+                  {
+                    alert('La página está cargada');
+                  }
+                </script>
+                
+                <h1>Bienvenidos</h1>
+                </body> -->
+                
+      <hr>
+      <hr>
+      <h5>7.-el objeto window (seccion 4 linea 34)
+            El siguiente programa muestra varios de los métodos disponibles del objeto window:
+            </h5>
+            <script>
+                    function abrir()
+                    {
+                      var ventana=open();
+                      ventana.document.write("Estoy escribiendo en la nueva ventana<br>");
+                      ventana.document.write("Segunda linea");
+                    }
+                  
+                    function abrirParametros()
+                    {
+                      var ventana=open('','','status=yes,width=400,height=250,menubar=yes');
+                      ventana.document.write("Esto es lo primero que aparece<br>");
+                    }
+                   
+                    function mostrarAlerta()
+                    {
+                      alert("Esta ventana de alerta ya la utilizamos en otros problemas.");
+                    }
+                  
+                    function confirmar()
+                    {
+                      var respuesta=confirm("Presione alguno de los dos botones");
+                      if (respuesta==true)
+                        alert("presionó aceptar");
+                      else
+                        alert("presionó cancelar");  
+                    }
+                  
+                    function cargarCadena()
+                    {
+                      var cad=prompt("cargue una cadena:","");
+                      alert("Usted ingreso "+cad);
+                    }
+                  </script>
+                  
+                  <p>Este programa permite analizar la llamada a
+                  distintas responsabilidades del objeto window.</p>
+                  <form>
+                    <br>
+                    <input type="button" value="open()" onClick="abrir()">
+                    <br>
+                    <input type="button" value="open con parámetros" onClick="abrirParametros()" >
+                    <br>
+                    <input type="button" value="alert" onClick="mostrarAlerta()">
+                    <br>
+                    <input type="button" value="confirm" onClick="confirmar()">
+                    <br>
+                    <input type="button" value="prompt" onClick="cargarCadena()">
+                  </form>
+                  
+      <hr>
+      <hr>
+      <h5>8. Confeccionar una página que permita abrir otra ventana cuando se presiona un botón. Dicha ventana debe tener como ancho 600 pixeles y alto 300 pixeles.
+        </h5>
+
+        <script>
+                function abrirVentana()
+                {
+                  var ventana=open('','','width=600,height=300');
+                }
+              </script>
+              
+              <form>
+                <input type="button" value="abrir ventana" onClick="abrirVentana()">
+              </form>
+              
+      <hr>
+      <hr>
+      <h5>9.-Propiedad location del objeto window  (seccion 4 linea 35)
+            Implementaremos un pequeño ejemplo para ver la utilidad de esta propiedad: Supongamos que tenemos un botón que al ser presionado ingrese al periódico La Nación, pero primero muestre una ventana de confirmación, si queremos ingresar al periódico. En caso que el visitante presione el botón afirmativo, redireccionamos al sitio de La Nación, en caso contrario mostramos un mensaje:
+            </h5>
+            <script>
+                    function verificarEntrada()
+                    {
+                      if (window.confirm('Desea salir del sitio e ingresar al periódico La Nación?'))
+                      {
+                        window.location='http://www.lanacion.com.ar';
+                      }
+                      else
+                      {
+                        window.alert('No hay problema');
+                      }
+                    }
+                  </script>
+                  
+                  <button onClick="verificarEntrada()">Ingresar a La Nación</button>
+                  
+      <hr>
+      <hr>
+      <h5>10. Confeccionar una página que tenga un hipervínculo. Cuando se presione dicho hipervínculo generar un valor aleatorio entre 0 y 2. Si se genera el 0 llamar al webmail de hotmail, si se genera un 1 llamar a gmail en caso de generarse un 2 llamar a yahoo.
+            Para generar un valor aleatorio utilizar la función random del objeto Math.
+            var num;
+num=Math.random()*3; //se guarda en num un valor comprendido entre 0.00001 y 2.99999
+num=parseInt(num);  //guardamos solo la parte entera de la variable num
+if (num==0)
+    window.location='http://www.hotmail.com';
+..…
+
+            </h5>
+
+            <script>
+                    function redireccionar()
+                    {
+                      var num;
+                      num=Math.random()*3;
+                      num=parseInt(num);  
+                      if (num==0)
+                      {
+                        window.location='http://www.outlook.com';
+                      }
+                      if (num==1)
+                      {
+                        window.location='http://www.yahoo.com';
+                      }
+                      if (num==2)
+                      {
+                        window.location='http://www.gmail.com';
+                      }
+                    }
+                  </script>
+                  
+                    <button onClick="redireccionar()">Redireccionar a un servidor de mail</button>
+                  
+
+      <hr>
+      <hr>
+      <h5>11.-Propiedad history del objeto window(seccion 4 linea 36) <br/>
+
+            El objeto history almacena todas las páginas que visitamos. Luego, con una serie de funciones, podemos extraer de la memoria de la computadora las páginas ya visitadas, sin tener que pedirlas nuevamente al servidor.
+            Cuenta con las siguientes funciones:
+              window.history.back();    //Retrocede a la página anterior
+              window.history.forward(); //Avanza a la página siguiente almacenada en la 
+                                          cache de la máquina.
+              window.history.go();  //Avanza o retrocede en la lista de páginas visitadas.
+            Llamar a la función back, tiene el mismo comportamiento que presionar el botón "Atrás" del navegador.
+            El siguiente ejemplo nos permite cargar una segunda página y luego retroceder a la primera página sin tener que solicitarla nuevamente al servidor:  
+            </h5>
+            <h2>ir a documentacion en javascriptya.com</h2>
+      <hr>
+      <hr>
+      <h5>12.-Propiedad screen del objeto window(seccion 4 linea 37)
+            El siguiente programa muestra el valor almacenado en las cinco propiedades que tiene el objeto screen:
+            </h5>
+            <script>
+                    document.write('Valores de las propiedades del objeto screen:<br>');
+                    document.write('availHeight :' + screen.availHeight + '<br>');
+                    document.write('availWidth :' + screen.availWidth + '<br>');
+                    document.write('height :' + screen.height + '<br>');
+                    document.write('width :' + screen.width + '<br>');
+                    document.write('colorDepth :' + screen.colorDepth);
+                  </script>
+                  
+      <hr>
+      <hr>
+      <h5>13. Confeccionar un programa que al presionar un botón aparezca una ventana que ocupe todo el ancho del monitor y la mitad de su altura.
+        </h5>
+        <script>
+                function abrirVentana()
+                {
+                  var ventana=open('','','width='+ screen.availWidth +',height='+screen.availHeight/2);
+                }
+              </script>
+              
+              <form>
+                <input type="button" value="abrir ventana" onClick="abrirVentana()">
+              </form>
+              
+              
+      <hr>
+      <hr>
+      <h5>14.-Propiedad navigator del objeto window(seccion 4 linea 38)
+            Las propiedades comunes a estos navegadores son:
+            appName : almacena el nombre oficial del navegador.
+            appVersion : almacena la versión del navegador.
+            cookieEnabled : almacena si las cookies están activas en el navegador.
+            platform : almacena la plataforma donde el navegador se está ejecutando.
+            plugins : almacena un array de los plugin cargados en el navegador.
+            Este pequeño programa muestra los valores de las propiedades antes anunciadas:
+            </h5>
+
+            <script>
+                    document.write('Valores de las propiedades del objeto navigator:<br>');
+                    document.write('appName :' + navigator.appName + '<br>');
+                    document.write('appVersion :' + navigator.appVersion + '<br>');
+                    document.write('cookieEnabled :' + navigator.cookieEnabled + '<br>');
+                    document.write('plugins :' + navigator.plugins.length + '<br>');
+                  </script>
+                  
+      <hr>
+      <hr>
+      <h5>15. Una vez que se cargue la página mostrar un alert indicando si el navegador tiene activas las cookies.
+        </h5>
+
+      <!--   <body onLoad="verificar()">
+
+                <script>
+                  function verificar()
+                  {
+                    if (navigator.cookieEnabled==true)
+                    {
+                      alert('Acceso a cookies activadas');
+                    }
+                    else
+                    {
+                      alert('No se encuentran activadas las cookies en este navegador');
+                    }
+                  }
+                </script>
+                
+                <h1>Bienvenidos</h1>
+                </body> -->
+                
+      <hr>
+      <hr>
+      <h5>16.-Programación orientada a objetos en JavaScript.(seccion 4 linea 40)
+
+            Confeccionar una clase llamada suma, que contenga dos atributos (valor1, valor2) y tres métodos: cargarvalor1, cargarvalor2 y retornarresultado. Implementar la clase suma.
+                La definición de un objeto de la clase que deben plantear es:
+                 var s=new suma();
+                s.primervalor(10);
+                s.segundovalor(20);
+                document.write('La suma de los dos valores es:'+s.retornarresultado());
+            </h5>
+
+          
+         
+         <script>
+                    function Suma(valor1,valor2)
+                    {
+                      this.valor1=valor1;
+                      this.valor2=valor2;
+                      this.primerValor=primerValor;
+                      this.segundoValor=segundoValor;
+                      this.retornarResultado=retornarResultado;
+                    }
+                  
+                    function primerValor(valor1)
+                    {
+                      this.valor1=valor1;
+                    }
+                  
+                    function segundoValor(valor2)
+                    {
+                      this.valor2=valor2;
+                    }
+                  
+                    function retornarResultado()
+                    {
+                      return this.valor1+this.valor2;
+                    }
+                  
+                      var suma1;
+                    suma1=new Suma(5,10);
+                    document.write('La suma de 5 y 10 es:'+suma1.retornarResultado()+'<br>');
+                    suma1.primerValor(70);
+                    suma1.segundoValor(30);
+                    document.write('La suma de 70 y 30 es:'+suma1.retornarResultado()+'<br>'); 
+                  </script>
+                  <img src="img/Captura.JPG" alt="codigo">
+                  
+      <hr>
+      <hr>
+     
+</body>
+
+
+</html>

@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ciclos Anidados</title>
+		<link rel="stylesheet" href="mystyle.css"></link>
+		
+		<link rel="stylesheet" href="normalize.css"></link>
+	
+		<link rel="stylesheet" href="forms.css"></link>
+	
+		<link rel="stylesheet" href="nuevo.css"></link>
+	</head>
+    <body>
+		<hr>
+		<h5 class="cont">Algoritmo que muestre la tabla de multiplicar de 
+		los numeros del 1 al 10</h2>
+		<hr>
+		<script>
+				function hacer() {
+			max = parseInt(document.getElementById('codigo').value)
+			info = document.getElementById('info')
+			
+             var i,j,valor;
+			
+			for(i=1; i<=max; i++){
+
+				for(j=0; j<=10; j++){
+				
+					valor=i*j;
+					info.innerHTML +=(i+" * "+j+" = "+valor+"<br>");		
+				}
+				info.innerHTML +=("<br>")
+			}
+			
+		}
+		</script>
+		<input type="number" id="codigo" placeholder="numero">
+		<input type="button" value="click" onclick="hacer()">
+	
+		<div id="info"></div>
+	<body> 	
+</html>

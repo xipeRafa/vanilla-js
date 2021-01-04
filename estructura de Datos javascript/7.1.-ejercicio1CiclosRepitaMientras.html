@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Repita Mientras</title>
+		<link rel="stylesheet" href="mystyle.css">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="forms.css">
+		<link rel="stylesheet" href="nuevo.css">
+	</head>
+	<hr>
+    <h5>Algoritmo que imprima los primeros 10 numeros
+	de la tabla del 5
+	</h5>
+		<hr>
+		<script>
+			
+			
+			
+
+			function hacer(){
+				var num=1,valor=0;
+		
+			var info = document.getElementById('info')
+			do{
+				valor=5*num;
+				info.innerHTML+=("5 * "+num+" = "+valor+"<br>");
+				num++;
+			
+			}while(num<=10);
+			
+			
+			}
+		</script>
+			<input type="button" value="click" onclick="hacer()">
+			<div id="info"></div> 
+
+			<pre><code>
+                     Repita Mientras
+
+var num=1,valor=0;
+		
+do{
+	valor=5*num;
+	info.innerHTML+=("5 * "+num+" = "+valor);
+	num++;
+			
+}while(num<=10);
+						
+}
+	</code></pre>
+	<body> 	
+</html>

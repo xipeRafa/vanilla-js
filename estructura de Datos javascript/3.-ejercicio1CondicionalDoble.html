@@ -1,0 +1,124 @@
+<html>
+<head>
+	<meta charset="UTF-8"></meta>
+
+	<title>Condicional Doble</title>
+
+	<title>
+		Ejercicio 1 condicional Doble
+	</title>
+
+	<link
+		rel="stylesheet"
+		href="mystyle.css"
+	></link>
+
+	<link
+		rel="stylesheet"
+		href="normalize.css"
+	></link>
+
+	<link
+		rel="stylesheet"
+		href="forms.css"
+	></link>
+
+	<link
+		rel="stylesheet"
+		href="nuevo.css"
+	></link>
+	<link rel="stylesheet" href="mystyle.css">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="forms.css">
+		<link rel="stylesheet" href="nuevo.css">
+</head>
+
+<body>
+	<hr>
+	<h5 class="cont">  
+		La tienda "Mis Zapatos" está de aniversario, por esa 
+		razón se está realizando un descuento del 40% en compras
+		mayores o iguales a los $ 100.000 y un descuento del 10% 
+		en compras normales, Haga un algoritmo que permita validar
+		cuando se debe aplicar un descuento a un cliente, se debe
+		informar al usuario indicando el valor descontado.
+	</h5>
+
+	<hr>
+
+	<script>
+		function hacer(){
+
+			var info = document.getElementById('info')
+			var valorCompra = document.getElementById('compra').value
+			var valorInicial = document.getElementById('compra').value
+
+		var descuento;
+		      descuento=0;
+				
+				if(valorCompra>=100000){
+					descuento=valorCompra*0.4;
+					valorCompra=valorCompra-descuento;
+					info.innerHTML=("Se aplicó un descuento del 40% equivalente a: "+descuento+"<br>");		
+				}
+				else{
+					descuento=valorCompra*0.1;
+					valorCompra=valorCompra-descuento;
+					info.innerHTML=("Se aplicó un descuento del 10% equivalente a: "+descuento+"<br>");		
+				}
+				info.innerHTML+=("Valor Compra: "+valorInicial+"<br>");
+				info.innerHTML+=("Valor Final: "+valorCompra+"<br>");
+		}
+	</script>
+
+	<form class="row">
+		<input
+		class="o o3 c c3"
+	        type="number"
+			id="compra"
+			placeholder="valor de la compra"
+		></input>
+
+		<input
+		class="o o1 c c2  "
+			type="button"
+			value="descuento"
+			onclick="hacer()"
+		></input>
+	</form>
+
+	<div id="info" class="c c12"></div>
+
+
+
+	<pre class="c c12" >
+		<code>
+		                        Condicional Doble
+function hacer(){
+
+var info = document.getElementById('info')
+var valorCompra = document.getElementById('compra').value
+var valorInicial = document.getElementById('compra').value
+
+var descuento;
+ descuento=0;
+				
+if(valorCompra>=100000){
+ descuento=valorCompra*0.4;
+ valorCompra=valorCompra-descuento;
+ info.innerHTML=("Se aplicó un descuento del 40% equivalente a: "+descuento);		
+ }
+  else{
+  descuento=valorCompra*0.1;
+  valorCompra=valorCompra-descuento;
+  info.innerHTML=("Se aplicó un descuento del 10% equivalente a: "+descuento);		
+    }
+    info.innerHTML+=("Valor Compra: "+valorInicial);
+    info.innerHTML+=("Valor Final: "+valorCompra);
+	}    	
+
+	</code>
+</pre>
+
+</body>
+</html>

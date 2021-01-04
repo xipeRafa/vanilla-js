@@ -1,0 +1,57 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejemplo</title>
+		<link rel="stylesheet" href="mystyle.css">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="forms.css">
+		<link rel="stylesheet" href="nuevo.css">
+	</head>
+    <body>
+		<hr>
+		<script>
+         function clickk(){
+	   
+	   //variables de las entradas
+    
+		 let io=document.getElementById('io').value
+		 ix=document.getElementById('ix').value
+
+        //variables de las salidas
+		
+		
+		 suma=parseInt(io)+parseInt(ix)
+		 resta=parseInt(io)-parseInt(ix)
+		 mul=parseInt(io)*parseInt(ix)
+		 div=parseInt(io)/parseInt(ix)
+		 
+ //proyectar salida      
+		  
+			sumaa.innerHTML=`la suma es: ${suma}`
+			restaa.innerHTML=`la resta es: ${resta}`
+			mull.innerHTML=`la multiplicacion es: ${mul}`
+			divv.innerHTML=`la divicion es: ${div}`
+		
+			}
+			
+		</script>
+
+<form class="container">
+
+<input type="number" placeholder="Ingrese el numero 1" id="io" class="o o3 c c6">
+<input type="number" placeholder="Ingrese el numero 2" id="ix" class="o o3 c c6">
+
+<input type="button" value="click" onclick="clickk()" class=" o o3 c c6">
+</form>
+<br>
+
+
+<!-- contenedores de salida -->
+
+<div id="sumaa">suma</div>
+<div id="restaa">resta</div>
+<div id="mull">multipicacion</div>
+<div id="divv">divicion</div>
+
+	<body> 	
+</html>

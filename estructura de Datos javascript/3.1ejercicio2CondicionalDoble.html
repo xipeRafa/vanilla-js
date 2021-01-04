@@ -1,0 +1,72 @@
+<html>
+		<head>
+				<meta charset="UTF-8">
+				<title>Condicional Doble</title>
+				<link
+				rel="stylesheet"
+				href="mystyle.css"
+			></link>
+		
+			<link
+				rel="stylesheet"
+				href="normalize.css"
+			></link>
+		
+			<link
+				rel="stylesheet"
+				href="forms.css"
+			></link>
+		
+			<link
+				rel="stylesheet"
+				href="nuevo.css"
+			></link>
+			</head>
+			<body>
+			<hr>
+    <h5 class="cont">Algoritmo que valide si una persona es mayor o menor
+		de edad, tenga en cuenta que una persona es mayor a
+		partir de los 18 años</h5>
+		<hr>
+		<script>
+			function hacer(){
+				
+				let nombre = document.getElementById('nombre').value
+				edad = document.getElementById('edad').value
+				info= document.getElementById('info')
+			
+				if(edad>=18){
+				info.innerHTML=(nombre+" es Mayor de edad por que tiene:"+edad+"años de edad")
+				}else{
+					info.innerHTML=(nombre+" es Menor de edad por que tiene:"+edad+"años de edad")
+				}
+				
+			}	
+		
+		</script>
+		<input type="text" id="nombre" placeholder="nombre">
+		<input type="number" id="edad" placeholder="edad">
+		<input type="button" value="click" onclick="hacer()">
+
+		<div id="info" class="cap"></div>
+
+
+		<pre><code>
+function hacer(){
+				
+let nombre = document.getElementById('nombre').value
+	edad = document.getElementById('edad').value
+	info= document.getElementById('info')
+			
+if(edad>=18){
+	 info.innerHTML=(nombre+" es Mayor de edad por que tiene:"+edad+"años de edad")
+	}
+	else{
+     info.innerHTML=(nombre+" es Menor de edad por que tiene:"+edad+"años de edad")
+	}
+				
+}				
+
+		</code></pre>
+	</body> 	
+</html>

@@ -1,0 +1,97 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Ejemplo</title>
+		<link rel="stylesheet" href="mystyle.css">
+		<link rel="stylesheet" href="normalize.css">
+		<link rel="stylesheet" href="forms.css">
+		<link rel="stylesheet" href="nuevo.css">
+	</head>
+    <body>
+		<hr>
+		<hr>
+	
+		<script>
+         function ssumar(){
+	   
+	   //variables de las entradas
+      let nombre=document.getElementById('nombre').value
+		 n1=document.getElementById('n1').value
+		 n2=document.getElementById('n2').value
+
+        //variables de las salidas
+		/* let info_nombre=document.getElementById('info_nombre')
+		 info_n1=document.getElementById('info_n1')
+		 info_n2=document.getElementById('info_n2')*/
+		 suma=parseInt(n1)+parseInt(n2)
+			
+			
+			//te capitaliza la primer letra de un texto
+           // +variable.charAt(0).toUpperCase()+nombre.slice(1))   
+
+		   //proyectar salida      
+		   info_nombre.innerHTML=`El nombre: ${nombre}`
+			info_n1.innerHTML=`El numero 1 es: ${n1}`
+			info_n2.innerHTML=`El numero 2 es: ${n2}`
+			suma_c.innerHTML=`la suma es: ${suma}`
+		
+			}
+			
+		</script>
+
+<form >
+<input type="text" placeholder="Igrese su nombre" id="nombre" class="o o3 c c6">
+<input type="number" placeholder="Ingrese el numero 1" id="n1" class="o o3 c c6">
+<input type="number" placeholder="Ingrese el numero 2" id="n2" class="border o o3 c c6">
+
+<input type="button" value="click" onclick="ssumar()" class=" o o3 c c6 ">
+</form>
+
+<div class="cont">
+<!-- contenedores de salida -->
+<div id="info_nombre" class="cap">nombre:</div>
+<div id="info_n1">numero 1:</div>
+<div id="info_n2">numero 2:</div>
+<div id="suma_c">suma:</div>
+</div>
+
+
+<!--------------codigo en HTML------------------>
+	<pre > 
+		<code> 
+function ssumar(){
+	   
+	     variables de las entradas
+ let nombre = document.getElementById('nombre').value
+         n1 = document.getElementById('n1').value
+	     n2 = document.getElementById('n2').value
+
+    //variables de las salidas
+let info_nombre = document.getElementById('info_nombre')
+        info_n1 = document.getElementById('info_n1')
+        info_n2 = document.getElementById('info_n2')
+
+           suma = parseInt(n1)+parseInt(n2)*/
+			
+	 //proyectar salida      
+info_nombre.innerHTML =`El nombre: ${nombre}`
+	info_n1.innerHTML = `El numero 1 es: ${n1}`
+	info_n2.innerHTML = `El numero 2 es: ${n2}`
+	 suma_c.innerHTML = `la suma es: ${suma}`
+		
+			}
+			
+	//te capitaliza la primer letra de un texto
+    // +variable.charAt(0).toUpperCase()+nombre.slice(1))   
+
+
+
+</code>		
+</pre>
+		
+		
+
+	<body> 	
+</html>
+
+

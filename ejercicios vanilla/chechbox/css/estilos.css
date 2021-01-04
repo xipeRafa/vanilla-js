@@ -1,0 +1,155 @@
+body {
+  background-color: rosybrown;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+/*html {
+  font-family: serif;
+  font-size: 16px;
+  box-sizing: border;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  background-color: steelblue;
+}
+
+.item {
+  background-color: #eee;
+  border: thin solid #000;
+  min-height: 30vh;
+}
+
+@media screen and (min-width: 64em) {
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  .Logo,
+  .Aside {
+    width: 15%;
+  }
+  .Menu,
+  .Article {
+    width: 70%;
+  }
+  .Social {
+    width: 85%;
+  }
+}
+
+/*----boton arriba-----*/
+.arriba {
+  position: fixed;
+  bottom: 40px;
+  right: -40px;
+  width: 34px;
+  height: 32px;
+  border: 2px solid rgba(125, 0, 0, 0.2);
+  border-radius: 30%;
+  background: rgba(125, 0, 0, 0.5);
+  box-shadow: 3px 3px 6px #000;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+}
+
+.slideUp {
+  right: 20px;
+  transition: 5s;
+}
+
+.slide {
+  transition: 5s;
+  right: -40px;
+}
+/*-------------------flecha---------*/
+
+.punta {
+  border-right: 13px solid transparent;
+  border-left: 13px solid transparent;
+  border-bottom: 12px solid rgba(225, 225, 225, 0.6);
+}
+
+.cuadro {
+  width: 10px;
+  height: 11px;
+  background: rgba(225, 225, 225, 0.6);
+}
+
+/*----------------grids----------------*/
+#no-v {
+  display: none;
+}
+.grids {
+  position: fixed;
+  top: -10px;
+  right: 5%;
+  bottom: 0;
+  width: 90%;
+  height: auto;
+  margin: 1% auto;
+  display: flex;
+  align-items: stretch;
+  z-index: 1111111;
+}
+
+.grids div {
+  background: rgba(229, 129, 200, 0.5);
+  text-align: center;
+  color: darkred;
+  width: 6.5%;
+  margin-right: 2%;
+  padding: 1em 0;
+}
+.grids div:nth-child(4) {
+  background: rgba(200, 129, 47, 0.5);
+}
+
+.grids div:nth-child(9) {
+  background: rgba(200, 129, 47, 0.5);
+}
+.grids div:nth-child(12) {
+  margin-right: 0;
+}
+/*----------------gits------------*/
+.container__box {
+  width: 92%;
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.box {
+  background: #acf;
+  padding: 20px;
+  width: 262px;
+  height: auto;
+  margin: 1%;
+  box-sizing: border-box;
+}
+
+.box::first-letter {
+  color: firebrick;
+}
+
+@media screen and (max-width: 620px) {
+  .box {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .box {
+    width: 90%;
+  }
+}

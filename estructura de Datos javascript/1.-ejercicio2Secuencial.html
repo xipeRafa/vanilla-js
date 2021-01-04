@@ -1,0 +1,47 @@
+<html>
+		<head>
+				<meta charset="UTF-8">
+				<title>Secuencial</title>
+				<link rel="stylesheet" href="mystyle.css"></link>
+		
+			<link rel="stylesheet" href="normalize.css"></link>
+		
+			<link rel="stylesheet" href="forms.css"></link>
+		
+			<link rel="stylesheet" href="nuevo.css"></link>
+			</head>
+    <body>
+		<hr>
+		<h5 class="cont">algoritmo que reciba como entrada el sueldo de una 
+		persona y sus horas extras trabajadas y luego imprima el
+		Sueldo total de esta persona dado que cada hora extra 
+		vale $3000.</h5>
+		<hr>
+		<script>
+
+				function hacer() {
+			let	sueldoBase = parseInt(document.getElementById('n2').value)
+			cantHorasExtras= parseInt(document.getElementById('codigo').value)
+			info = document.getElementById('info')
+		
+			var sueldoTotal,totalHorasExt;
+			
+			
+			info.innerHTML =("Sueldo Base= "+sueldoBase+"<br>");
+			
+			info.innerHTML +=("Cantidad horas extras= "+cantHorasExtras+"<br>");
+			
+			totalHorasExt=cantHorasExtras*3000;
+			sueldoTotal=sueldoBase+totalHorasExt;
+			
+			info.innerHTML +=("El sueldo total es= "+sueldoTotal+"<br>");
+			
+			}
+		</script>
+		<input type="number" id="n2" placeholder="sueldo base">
+		<input type="number" id="codigo" placeholder="horas extra">
+		<input type="button" value="click" onclick="hacer()">
+	
+		<div id="info"></div>
+	<body> 	
+</html>

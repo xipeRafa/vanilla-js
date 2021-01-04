@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>checkbox
+    </title>
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+    <link href="css/estilos.css" rel="stylesheet" />
+    <link href="https://file.myfontastic.com/QVGkcMXXjo6tzwASp767kS/icons.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta content="" http-equiv="refresh" />
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+    <script src="codigo.js">
+    </script>
+    <a href="#" name="inicio">
+    </a>
+    <!--poner este a al principio siempre-->
+
+    <a href="#inicio">
+        <span class="arriba" id="myImg">
+            <div class="punta">
+            </div>
+            <div class="cuadro">
+            </div>
+        </span>
+    </a>
+    <div class="grids" id="no-v">
+        <div>
+            1
+        </div>
+        <div>
+            2
+        </div>
+        <div>
+            3
+        </div>
+        <div>
+            4
+        </div>
+        <div>
+            5
+        </div>
+        <div>
+            6
+        </div>
+        <div>
+            7
+        </div>
+        <div>
+            8
+        </div>
+        <div>
+            9
+        </div>
+        <div>
+            10
+        </div>
+        <div>
+            11
+        </div>
+        <div>
+            12
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <p> Confeccionar una página que muestre 4 lenguajes de programación que el usuario puede seleccionar si los conoce. Luego
+        mostrar un mensaje indicando la cantidad de lenguajes que ha seleccionado el operador.
+
+    </p>
+
+    <script>
+        function contarSeleccionados() {
+            var cant = 0;
+            if (document.getElementById('checkbox1').checked) {
+                cant++;
+            }
+            if (document.getElementById('checkbox2').checked) {
+                cant++;
+            }
+            if (document.getElementById('checkbox3').checked) {
+                cant++;
+            }
+            if (document.getElementById('checkbox4').checked) {
+                cant++;
+            }
+            alert('Conoce ' + cant + ' lenguajes');
+        }
+    </script>
+
+    <form>
+        <input type="checkbox" id="checkbox1">JavaScript
+        <br>
+        <input type="checkbox" id="checkbox2">PHP
+        <br>
+        <input type="checkbox" id="checkbox3">JSP
+        <br>
+        <input type="checkbox" id="checkbox4">VB.Net
+        <br>
+        <input type="button" value="Mostrar" onClick="contarSeleccionados()">
+    </form>
+
+    <hr>
+    <hr>
+    <p>Confeccionar una página que muestre tres checkbox que permitan seleccionar los deportes que practica el usuario (Fútbol,
+        Básket, Tenis) Mostrar al presionar un botón los deportes que eligió.</p>
+    <script>
+        function verificar() {
+            var deportes = '';
+            if (document.getElementById("checkboxuno").checked) {
+                deportes = deportes + 'Fútbol ';
+            }
+            if (document.getElementById("checkboxdos").checked) {
+                deportes = deportes + 'Básquet ';
+            }
+            if (document.getElementById("checkboxtres").checked) {
+                deportes = deportes + 'Tenis';
+            }
+            alert('Los deportes seleccionados son:' + deportes);
+        }
+    </script>
+
+    <form>
+        Seleccione los deportes que practica:
+        <br>
+        <input type="checkbox" id="checkboxuno">Fútbol
+        <br>
+        <input type="checkbox" id="checkboxdos">Básquet
+        <br>
+        <input type="checkbox" id="checkboxtres">Tenis
+        <br>
+        <input type="button" value="Controlar" onClick="verificar()">
+    </form>
+</body>
+
+
+<hr>
+<hr>
+<p> entrada y salida</p>
+
+<form action="post">
+    <input type="text" id="entrada" placeholder="entrada">
+
+    <input type="button" onClick="funcion()" value="ejecutar">
+</form>
+
+
+<div id="info">texto:</div>
+
+<script>
+    function funcion() {
+
+        let entrada = document.getElementById('entrada').value;
+
+        let info = document.getElementById('info');
+
+        info.innerHTML = `texto: ${entrada}`
+    }
+</script>
+
+
+</html>

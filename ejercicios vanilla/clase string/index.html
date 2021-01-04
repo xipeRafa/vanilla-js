@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <title>clase string
+
+    </title>
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+
+
+    <link href="css/estilos.css" rel="stylesheet" />
+    <link href="https://file.myfontastic.com/QVGkcMXXjo6tzwASp767kS/icons.css" rel="stylesheet">
+    <link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta content="" http-equiv="refresh" />
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+</head>
+
+<body>
+
+    <script src="codigo.js">
+    </script>
+    <a href="#" name="inicio">
+    </a>
+    <!--poner este a al principio siempre-->
+
+    <a href="#inicio">
+        <span class="arriba" id="myImg">
+            <div class="punta">
+            </div>
+            <div class="cuadro">
+            </div>
+        </span>
+    </a>
+    <div class="grids" id="no-v">
+        <div>
+            1
+        </div>
+        <div>
+            2
+        </div>
+        <div>
+            3
+        </div>
+        <div>
+            4
+        </div>
+        <div>
+            5
+        </div>
+        <div>
+            6
+        </div>
+        <div>
+            7
+        </div>
+        <div>
+            8
+        </div>
+        <div>
+            9
+        </div>
+        <div>
+            10
+        </div>
+        <div>
+            11
+        </div>
+        <div>
+            12
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <p>Realizar la búsqueda de un string clave en un string fuente. Se deberá ingresar una frase o texto (fuente) y luego la clave a buscar. En caso de encontrarla, imprimir la posición, de lo contrario una leyenda que indique que no está.</p>
+
+    <script>
+        function buscador() {
+
+            let escribir = document.getElementById('escribir').value;
+            buscar = document.getElementById('buscar').value;
+            info = document.getElementById('info')
+
+
+            if (escribir.indexOf(buscar) != -1) {
+                info.innerHTML = ('La frase ingresada contiene la palabra: ' + buscar);
+            } else {
+                info.innerHTML = ('La frase ingresada no contiene la palabra: ' + buscar);
+            }
+        }
+    </script>
+    <input type="text" id="escribir" placeholder="escribir">
+    <input type="text" id="buscar" placeholder="A buscar">
+    <br>
+    <input type="button" class="button-primary" value="buscar" onClick="buscador()">
+
+    <div id="info"></div>
+
+    <hr>
+    <hr>
+    <p>Ingresar una palabra o texto por teclado y determinar si es o no una palabra palíndromo. (Palabra que se lee de igual manera de adelante hacia atrás, que de atrás hacia delante)</p>
+    <script>
+        function pali() {
+
+            let pal = document.getElementById('palindromo').value;
+
+            inf = document.getElementById('inf')
+
+
+            var cant = 0;
+            var f;
+            for (f = 0; f < pal.length; f++) {
+                if (pal.charAt(f) == pal.charAt(pal.length - 1 - f)) {
+                    cant++;
+                }
+            }
+            if (cant == pal.length) {
+                inf.innerHTML = (pal + ' se lee igual en ambas direcciones');
+            } else {
+                inf.innerHTML = (pal + ' no se lee igual en ambas direcciones');
+            }
+        }
+    </script>
+
+
+    <input type="text" id="palindromo" placeholder="palindromo?">
+    <br>
+    <input type="button" class="button-primary" value="buscar" onClick="pali()">
+
+    <div id="inf"></div>
+    <hr>
+    <hr>
+    <p>Realizar un programa que permita cargar una dirección de mail e implementar una función que verifique si el String tiene cargado el carácter @.</p>
+
+    <script>
+        function correo() {
+            let arroba = document.getElementById('arroba').value;
+
+            let ins = document.getElementById('ins')
+
+
+            var cant = 0;
+            var f;
+            for (f = 0; f < arroba.length; f++) {
+                if (arroba.charAt(f) == '@') {
+                    cant++;
+                }
+            }
+            if (cant != 0) {
+                ins.innerHTML = ('El mail ' + arroba + ' tiene el caracter @');
+            } else {
+                ins.innerHTML = ('El mail ' + arroba + ' no tiene el caracter @');
+            }
+        }
+    </script>
+
+    <input type="text" id="arroba" placeholder="email">
+    <br>
+    <input type="button" class="button-primary" value="buscar" onClick="correo()">
+
+    <div id="ins"></div>
+    <hr>
+    <hr>
+    <p>Cargar un String por teclado e implementar las siguientes funciones: a) Imprimir la primera mitad de los caracteres de la cadena. b) Imprimir el último carácter. c) Imprimirlo en forma inversa. d) Imprimir cada carácter del String separado con un
+        guión. e) Imprimir la cantidad de vocales almacenadas.</p>
+
+    <script>
+    </script>
+    <input type="text" id="mis" placeholder="palabra">
+    <input type="button" class="button-primary" value="ejecutar" onClick="mixx()">
+
+    <div id="mixinfo"></div>
+    <div id="mixinf"></div>
+    <div id="inv"></div>
+
+    <hr>
+    <hr>
+    <p>Codifique un programa que permita cargar una oración por teclado, luego mostrar cada palabra ingresada en una línea distinta. Por ejemplo si cargo: La mañana está fría. Debe aparecer: La mañana está fría.
+    </p>
+
+    <script>
+        function frase() {
+
+            let ingres = document.getElementById('ingrese').value;
+
+            let out = document.getElementById('out')
+
+
+            var u;
+            for (u = 0; u < ingres.length; u++) {
+                if (ingres.charAt(u) == ' ') {
+                    out.innerHTML += ('<br>');
+                } else {
+                    out.innerHTML += (ingres.charAt(u));
+                }
+            }
+        }
+    </script>
+    <input type="text" id="ingrese" placeholder="ingrese">
+    <input type="button" class="button-primary" value="ejecutar" onClick="frase()">
+
+
+    <div id="out"></div>
+
+
+
+    <hr>
+    <hr>
+</body>
+
+</html>
