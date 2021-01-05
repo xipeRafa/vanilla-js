@@ -7,7 +7,7 @@
     </title>
     <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+   
 
     <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="css/mystyle.css">
     <link rel="stylesheet" href="css/forms.css">
-    <link rel="stylesheet" href="css/nuevo .css">
+    <link rel="stylesheet" href="css/nuevo.css">
 
     <link href="css/estilos.css" rel="stylesheet" />
     <link href="https://file.myfontastic.com/QVGkcMXXjo6tzwASp767kS/icons.css" rel="stylesheet">
@@ -28,13 +28,137 @@
 </head>
 
 <body>
- <!--  <hr><hr>
+<hr>                    
+                    <pre><code>
+
+                      function Suma(valor1,valor2)
+                      {
+                        this.valor1=valor1;
+                        this.valor2=valor2;
+                        this.primerValor=primerValor;
+                        this.segundoValor=segundoValor;
+                        this.retornarResultado=retornarResultado;
+                      }
+
+                      function primerValor(valor1)
+                      {
+                        this.valor1=valor1;
+                      }
+
+                      function segundoValor(valor2)
+                      {
+                        this.valor2=valor2;
+                      }
+
+                      function retornarResultado()
+                      {
+                        return this.valor1+this.valor2;
+                      }
+
+                      var suma1;
+                      suma1=new Suma(5,10);
+                      document.write('La suma de 5 y 10 es:'+suma1.retornarResultado()+'< br>');
+                      suma1.primerValor(70);
+                      suma1.segundoValor(30);
+                      document.write('La suma de 70 y 30 es:'+suma1.retornarResultado()+'< br>');                     
+                  </code></pre>
+  <script>
+    function Suma(valor1,valor2)
+    {
+      this.valor1=valor1;
+      this.valor2=valor2;
+      this.primerValor=primerValor;
+      this.segundoValor=segundoValor;
+      this.retornarResultado=retornarResultado;
+    }
+  
+    function primerValor(valor1)
+    {
+      this.valor1=valor1;
+    }
+  
+    function segundoValor(valor2)
+    {
+      this.valor2=valor2;
+    }
+  
+    function retornarResultado()
+    {
+      return this.valor1+this.valor2;
+    }
+  
+    var suma1;
+    suma1=new Suma(5,10);
+    document.write('La suma de 5 y 10 es:'+suma1.retornarResultado()+'<br>');
+    suma1.primerValor(70);
+    suma1.segundoValor(30);
+    document.write('La suma de 70 y 30 es:'+suma1.retornarResultado()+'<br>'); 
+  </script>
+  <hr><hr>
     <h5>.-Definición de varias clases.(seccion 5 linea 41) <br>
         En JavaScript podemos definir varias clases en un mismo programa.
         Vamos a desarrollar un programa que contenga dos clases. Plantearemos una clase Numeroquiniela que representa una persona que elige un número de quiniela y además registra su nombre, la clase tiene por objetivo la carga por el teclado del número deseado.
         Por otra parte crearemos una clase Bolillero que sortee un valor aleatorio entre 1 y 10 (que representa el valor extraído del bolillero)
         La codificación de las dos clases es:
         </h5>
+
+        <pre><code>
+          function Numeroquiniela(nombre)
+          {
+            this.nombre=nombre;
+            this.cargarnumero=cargarnumero;
+            this.verificarsigano=verificarsigano;
+          }
+        
+          function cargarnumero()
+          {
+            this.numero=prompt("Que número de quiniela quiere?","");
+          }
+        
+          function verificarsigano(num)
+          {
+            if (this.numero==num)
+              return true;
+            else
+              return false;
+          }
+        
+          //clase Bolillero **************************************
+          function Bolillero()
+          {
+            this.numero=-1;
+            this.sortear=sortear;
+          }
+          
+          function sortear()
+          {
+            this.numeroS=parseInt(Math.random()*2)+1;
+          }
+        
+          // bloque principal
+          var numeroquiniela1;
+          numeroquiniela1=new Numeroquiniela("juan");
+          numeroquiniela1.cargarnumero();
+
+          var numeroquiniela2;
+          numeroquiniela2=new Numeroquiniela("ana");
+          numeroquiniela2.cargarnumero();
+
+          var bolillero;
+          bolillero=new Bolillero();
+          bolillero.sortear();
+          document.write('Numero sorteado:' + bolillero.numeroS + '< br>');
+          document.write(numeroquiniela1.nombre + ' eligió ' + numeroquiniela1.numero +'< br>');
+          document.write(numeroquiniela2.nombre + ' eligió ' + numeroquiniela2.numero +'< br>');
+          if (numeroquiniela1.verificarsigano(bolillero.numeroS))
+          {
+            document.write(numeroquiniela1.nombre + ' ha ganado < br>');
+          }
+          if (numeroquiniela2.verificarsigano(bolillero.numeroS))
+          {
+            document.write(numeroquiniela2.nombre + ' ha ganado < br>');
+          }  
+        </code></pre>
         <script>
 
                 //clase Numeroquiniela *********************************
@@ -47,7 +171,7 @@
               
                 function cargarnumero()
                 {
-                  this.numero=prompt("Que número de quiniela quiere?","");
+                  this.numero=p rompt("Que número de quiniela quiere?","");
                 }
               
                 function verificarsigano(num)
@@ -141,6 +265,33 @@
                     Con un ejemplo veremos la sintaxis para trabajar con los mismos. Desarrollaremos una clase que represente un hipervínculo y luego definiremos un vector con componentes de tipo hipervinculo.
                     La clase hipervínculo y donde definimos objetos de dicha clase:
                     </h5>
+
+                    <pre><code>
+
+                      function Hipervinculo(direccion,titulo)
+                      {
+                        this.direccion=direccion;
+                        this.titulo=titulo;
+                        this.retornarhipervinculo=retornarhipervinculo;
+                      }
+                    
+                      function retornarhipervinculo()
+                      {
+                        var cadena;
+                        cadena='< a href=' + this.direccion + '>' + this.titulo + '</ a>';
+                        return cadena;
+                      }
+                    
+                      var vector=new Array(3);
+                      vector[0]=new Hipervinculo('http://www.google.com','google');
+                      vector[1]=new Hipervinculo('http://www.msn.com','msn');
+                      vector[2]=new Hipervinculo('http://www.yahoo.com','yahoo');
+                      for(var f=0;f< vector.length;f++)
+                      {
+                        document.write(vector[f].retornarhipervinculo());
+                        document.write('< br>');
+                      }  
+                    </code></pre>
             <script>
                     function Hipervinculo(direccion,titulo)
                     {
@@ -170,6 +321,44 @@
                <hr>
                <h5>Confeccionar una clase persona que permita almacenar el nombre y la edad. Luego definir un vector de 4 componentes de tipo persona. Imprimir el nombre de la persona con mayor edad; decir también si hay más de una persona con la edad mayor.
                 </h5>
+                <pre>
+                  <code>
+                  
+                  function Persona(nombre,edad)
+                        {
+                          this.nombre=nombre;
+                          this.edad=edad;
+                          this.imprimirNombre=imprimirNombre;
+                        }
+                      
+                        function imprimirNombre()
+                        {    
+                          document.write(this.nombre+' que tiene una edad '+this.edad+'< br>' );
+                        }
+                        
+                        var vector=new Array(4);
+                        vector[0]=new Persona('juan',45);
+                        vector[1]=new Persona('ana',45);
+                        vector[2]=new Persona('pedro',43);
+                        vector[3]=new Persona('marcos',18);
+                        var posmayor=0;
+                        for(var f=1;f< vector.length;f++)
+                        {
+                          if (vector[f].edad>vector[posmayor].edad)
+                          {
+                            posmayor=f;
+                          }
+                        }
+                        document.write('Personas con mayor edad:< br>');
+                        for(var f=0;f< vector.length;f++)    
+                        {
+                          if (vector[f].edad==vector[posmayor].edad)
+                          {
+                            vector[f].imprimirNombre();
+                          }
+                        
+                        }
+                </code></pre>
                 <script>
                         function Persona(nombre,edad)
                         {
@@ -208,6 +397,31 @@
                       
                <hr><hr>   
                <h5>.-Creacion de objetos literales  <br> Esta metodología consiste en definir una lista de propiedades y sus valores. Veamos con un ejemplo esta técnica:</h5>
+               <pre><code>
+                var cliente1 = {
+                  nombre: 'Juan',
+                  deposito: 0,
+                  imprimir: function ()
+                  {
+                    document.write(this.nombre+'< br>');
+                    document.write(this.deposito+'< br>');
+                  },
+                  depositar: function(monto) {
+                    this.deposito=this.deposito+monto;
+                  },
+                  extraer: function(monto) {
+                    this.deposito=this.deposito-monto;
+                  }                  
+               };
+             
+               cliente1.imprimir();
+               cliente1.depositar(1000);
+               document.write('Estado luego de depositar 1000 pesos</ br>');
+               cliente1.imprimir();
+               cliente1.extraer(200);
+               document.write('Estado luego de extraer 200 pesos</ br>');
+               cliente1.imprimir();
+               </code></pre>
                <script>
                 var cliente1 = {
                     nombre: 'Juan',
@@ -244,6 +458,32 @@
                     aumentarpuntos (permite incrementar la cantidad de puntos actuales del jugador)
                     verificarsigano (mostrar un mensaje si los puntos superan a 1000)
                 </h5>
+                <pre><code>
+                  var jugador1 = {
+                    nombre: 'ana',
+                    puntos: 0,
+                    imprimir: function() {
+                      document.write('Nombre:'+this.nombre+'< br>');
+                      document.write('Puntos:'+this.puntos+'< br>');
+                    },
+                    aumentarpuntos: function(cant) {
+                      this.puntos=this.puntos+cant;
+                    },
+                    verificarsigano: function() {
+                      if (this.puntos>1000)
+                      {
+                        document.write('Gano< br>');
+                      }
+                    }
+                  };
+                
+                  jugador1.imprimir();
+                  jugador1.aumentarpuntos(500);
+                  jugador1.verificarsigano();
+                  jugador1.aumentarpuntos(501);
+                  jugador1.verificarsigano();  
+                  jugador1.imprimir();
+                </code></pre>
                 <script>
                   var jugador1 = {
                     nombre: 'ana',
@@ -291,6 +531,26 @@
                   Para probar las distintas formas de creación de array implementaremos un programa que cree 5 Array, cargue algunos elementos y muestre la primer componente de cada uno de ellos:
                   
                   </h5>
+
+                  <pre><code>
+                    var vector1=new Array();
+                    vector1[0]=1;
+                  
+                    var vector2=[];
+                    vector2[0]=1;
+                  
+                    var vector3=new Array(5);
+                    vector3[0]=1;
+                  
+                    var vector4=new Array(1,70,'juan');  
+                    var vector5=[1,70,'juan'];  
+                  
+                    document.write(vector1[0]+'< br>');
+                    document.write(vector2[0]+'< br>');
+                    document.write(vector3[0]+'< br>');
+                    document.write(vector4[0]+'< br>');
+                    document.write(vector5[0]+'< br>');
+                  </code></pre>
                   <script>
                     var vector1=new Array();
                      vector1[0]=1;
@@ -315,7 +575,20 @@
                   <hr>
                   <h5>Confeccionar un programa que defina dos array, en uno almacenar los días de la semana y en otro los nombres de los meses. Emplear dos sintaxis diferentes para crear e inicializar sus componentes.
                   </h5>
-
+                   <pre><code>
+                    var meses=new Array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre');
+                    var dias=['lunes','martes','miercoles','jueves','viernes','sábado','domingo']; 
+                    var f;  
+                    for(f=0;f< meses.length;f++)
+                    {
+                      document.write(meses[f]+'< br>');
+                    } 
+                    document.write('< br>');
+                    for(f=0;f< dias.length;f++)
+                    {
+                      document.write(dias[f]+'<  br>');
+                    } 
+                   </code></pre>
                   <script>
                     var meses=new Array('enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre');
                     var dias=['lunes','martes','miercoles','jueves','viernes','sábado','domingo']; 
@@ -337,13 +610,35 @@
                   <h5>.- Array:densos(seccion 5 linea 45)
                     Crear un vector vacío. Mediante una estructura repetitiva solicitar la carga de elementos por teclado hasta que se ingrese el cero. No almacenar dicho valor en el vector. Luego sumar todas las componentes del vector, mostrar dicha suma y el tamaño del vector.
                     </h5>
-                    <script>
-
-                  /*  var vec=[];
+                    <pre><code>
+                      var vec=[];
                       var valor;
                       var indice=0;
                       do {
                         valor=prompt('Ingrese un valor entero (0 para finalizar)','');
+                        valor=parseInt(valor);
+                        if (valor!=0)
+                        {
+                          vec[indice]=valor;
+                          indice++;
+                        }
+                      } while (valor!=0);
+                      var f;
+                      var suma=0;
+                      for(f=0;f< vec.length;f++)
+                      {
+                        suma=suma+vec[f];
+                      }
+                      document.write('Se ingresaron '+vec.length+' valores< br>');
+                      document.write('La suma de los valores ingresados es:'+suma); 
+                    </code></pre>
+                    <script>
+
+                   var vec=[];
+                      var valor;
+                      var indice=0;
+                      do {
+                        valor=pro mpt('Ingrese un valor entero (0 para finalizar)','');
                         valor=parseInt(valor);
                         if (valor!=0)
                         {
@@ -358,7 +653,7 @@
                         suma=suma+vec[f];
                       }
                       document.write('Se ingresaron '+vec.length+' valores<br>');
-                      document.write('La suma de los valores ingresados es:'+suma); */
+                      document.write('La suma de los valores ingresados es:'+suma); 
                     </script>
                
 
@@ -366,6 +661,51 @@
                     <hr>
                     <h5>Crear un vector con 10 valores aleatorios comprendidos entre 1 y 500. Luego crear otros dos vectores y copiar los elementos menores a 250 en el segundo vector y los mayores o iguales a 250 en el tercer vector. Imprimir los tamaños del segundo y tercer vector. Imprimir los tres vectores.
                     </h5>
+                    <pre><code>
+                      var vec1=[];
+                      var f;
+                      for(f=0;f< 10;f++)
+                      {
+                        vec1[f]=parseInt(1+(Math.random()*500));    
+                      }
+                      var vec2=[];
+                      var vec3=[];
+                      var indice1=0;
+                      var indice2=0;
+                      for(f=0;f< vec1.length;f++)
+                      {
+                        if(vec1[f]< 250)
+                        {
+                          vec2[indice1]=vec1[f];
+                          indice1++;
+                        }
+                        else
+                        {
+                          vec3[indice2]=vec1[f];
+                          indice2++;
+                        }
+                      }
+                      document.write('Tamaño del primer vector: '+vec1.length+'< br>');
+                      document.write('Tamaño del segundo vector: '+vec2.length+'< br>');
+                      document.write('Tamaño del tercer vector: '+vec3.length+'< br>< br>');
+                      document.write('Elementos del primer vector:< br>');
+                      for(f=0;f< vec1.length;f++)
+                      {
+                        document.write(vec1[f]+'-');
+                      }
+                      document.write('< br>');
+                      document.write('Elementos del segundo vector:< br>');
+                      for(f=0;f< vec2.length;f++)
+                      {
+                        document.write(vec2[f]+'-');
+                      }
+                      document.write('< br>');
+                      document.write('Elementos del tercer vector:< br>');
+                      for(f=0;f< vec3.length;f++)
+                      {
+                        document.write(vec3[f]+'-');
+                      }
+                    </code></pre>
                     <script>
                       var vec1=[];
                       var f;
@@ -415,8 +755,8 @@
 <hr>   
 <h5>.-Array: no densos o dispersos (seccion 5 linea 46) <br>
   Ingresar por teclado un nro de cliente y el monto a depositar. Almacenar en un vector, utilizar como subíndice el nro de cliente y almacenar el monto depositado. <br> Sumar todos los depósitos recorriendo el vector e identificando las componentes cargadas (es decir las que tienen un valor distinto a null). <br> Imprimir la suma total depositada y la cantidad de clientes que depositaron.
-  </h5>                 
- <!--  <script>
+  </h5>   
+  <pre><code>
     var depositos=[];
     var nro,monto;
     do {
@@ -425,6 +765,32 @@
       if (nro!=0)
       {
         monto=prompt('Ingrese monto a depositar, terminar con 0','');
+        monto=parseInt(monto);
+        depositos[nro]=monto;
+      }
+    } while (nro!=0);
+    var suma=0;
+    var canti=0;
+    for(var f=0;f< depositos.length;f++)
+    {
+      if (depositos[f]!==undefined)
+      {
+        suma=suma+depositos[f];
+        canti++;
+      }
+    }
+    document.write('Cantidad de depósitos:'+canti+'< br>');
+    document.write('Total depositado por todos los clientes:'+suma);
+  </code></pre>              
+  <script>
+    var depositos=[];
+    var nro,monto;
+    do {
+      nro=prom pt('Ingrese nro de cliente, terminar con 0');
+      nro=parseInt(nro);
+      if (nro!=0)
+      {
+        monto=pr  ompt('Ingrese monto a depositar, terminar con 0','');
         monto=parseInt(monto);
         depositos[nro]=monto;
       }
@@ -441,7 +807,7 @@
     }
     document.write('Cantidad de depósitos:'+canti+'<br>');
     document.write('Total depositado por todos los clientes:'+suma);
-  </script> -->
+  </script> 
 <hr>
 <hr>  
 <h5>Crear un vector disperso que representen premios de una rifa. <br> Las posiciones indican los números que tienen premio. Almacenar en dichas posiciones los premios. Genera 10 premios con los montos 1000,2000,3000 etc.
@@ -449,7 +815,25 @@
   Generar valores aleatorios para los números con premio.
   Imprimir Los números con premio y los montos de los mismos.
 </h5>
+<pre><code>
+  var carton=[];
+  var f;
+  var cant=0;
+  do {
+    var premio=parseInt(Math.random()*1000);
+    carton[premio]=1000*(cant+1);
+    cant++;
+  } while (cant!=11);
+  for(f=0;f< carton.length;f++)
+  {
+    if (carton[f]!==undefined)
+    {
+      document.write('Carton '+f+' tiene un premio de '+carton[f]+'< br>');
+    }
+  }
+</code></pre>
 <script>
+  
   var carton=[];
    var f;
    var cant=0;
@@ -471,6 +855,24 @@
 <h5>.-Array: metodos push y pop (seccion 5 linea 47) <br>
   Realizar la carga de sueldos por teclado hasta que se ingrese el cero. Almacenar todos los valores ingresados en un vector empleando el método push. Mostrar la suma de sueldos ingresados.
   </h5> 
+  <pre><code>
+    var sueldos=[];
+    var monto;
+    do {
+      monto=promp('Ingrese el sueldo (0 para finalizar):','');
+      monto=parseInt(monto);
+      if (monto!=0)
+      {
+        sueldos.push(monto);
+      }
+    } while (monto!=0);
+    var suma=0;
+    for(var f=0;f< sueldos.length;f++)
+    {
+      suma=suma+sueldos[f];
+    }
+    document.write('El total en sueldos ingresado es:'+suma);
+  </code></pre>
   <script>
     var sueldos=[];
     var monto;
@@ -503,13 +905,28 @@
 
  </style>
    <h5> ejemplo que solicita 5 valores y los muestra por pantalla.</h5>
+
+   <pre><code>
+    function arr(){
+      let name = document.getElementById('num').value    
+          info = document.getElementById('info')
+     var miArray=[];
+     // bucle del 1 al 5
+       for(var i=1;i<=5;i++)   {
+      
+       miArray.push(name);
+   }
+      
+       info.innerHTML+=(miArray+"< br>")
+     }
+   </code></pre>
    <script>
      function arr(){
        let name = document.getElementById('num').value    
            info = document.getElementById('info')
       var miArray=[];
       // bucle del 1 al 5
-        for(var i=1;i<=42;i++)   {
+        for(var i=1;i<=5;i++)   {
        
         miArray.push(name);
     }
@@ -526,6 +943,27 @@
 <hr>
 <h5>Crear un vector con 10 valores aleatorios comprendidos entre 1 y 1000. Luego extraer los dos últimos elementos sumarlos y mostrarlos. Imprimir también el tamaño final del vector. 
 </h5>
+<pre><code>
+  var  vec=[];
+  var f;
+  for(f=0;f< 10;f++)
+  {
+    var nro=1+(Math.random()*1000);
+    vec.push(parseInt(nro));
+  }
+  for(f=0;f< vec.length;f++)
+  {
+    document.write(vec[f]+'< br>');
+  }
+  var sumaultimos=vec.pop()+vec.pop();
+  document.write('La suma de las dos últimas componentes es:'+sumaultimos+'< br>');
+  document.write('Tamaño final del vector'+vec.length+'< br>');
+  document.write('Elementos restantes del vector< br>');
+  for(f=0;f< vec.length;f++)
+  {
+    document.write(vec[f]+'< br>');
+  }
+</code></pre>
 <script>
   var  vec=[];
   var f;
@@ -541,10 +979,10 @@
   var sumaultimos=vec.pop()+vec.pop();
   document.write('La suma de las dos últimas componentes es:'+sumaultimos+'<br>');
   document.write('Tamaño final del vector'+vec.length+'<br>');
-  document.write('Elementos restantes del vector<br>');
+  document.write('Elementos restantes del vector: ');
   for(f=0;f<vec.length;f++)
   {
-    document.write(vec[f]+'<br>');
+    document.write(vec[f]+',');
   }
 </script>
 
@@ -553,12 +991,34 @@
 <h5>.-Array: metodos unshift y shift (seccion 5 linea 48) <br>
   Ingresar valores por teclado. Los valores menores a 100 ingresarlos al principio del vector y los mayores o iguales a 100 ingresarlos al final. Se finaliza la carga de datos al ingresar el cero. Cuando sale del do/while extraer el último valor ingresado que es el cero del vector. Imprimir el vector en la página
   </h5>
+  <pre><code>
+    var vec=[];
+    var f;
+    var valor;
+    do {
+      valor=promp('Ingresar un valor--metodos unshift y shift(0 para finalizar):','');
+      valor=parseInt(valor);
+      if (valor< 100)
+      {
+        vec.unshift(valor);
+      }
+      else
+      {
+        vec.push(valor);
+      }
+    } while (valor!=0);
+    vec.shift();
+    for(f=0;f< vec.length;f++)
+    {
+      document.write(vec[f]+'< br>');
+    }
+  </code></pre>
   <script>
   var vec=[];
   var f;
   var valor;
   do {
-    valor=promp('Ingresar un valor--metodos unshift y shift(0 para finalizar):','');
+    valor=pr ompt('Ingresar un valor--metodos unshift y shift(0 para finalizar):','');
     valor=parseInt(valor);
     if (valor<100)
     {
@@ -580,6 +1040,28 @@
 <hr>
 <h5>Ingresar valores por teclado. Los valores menores a 100 ingresarlos al principio del vector y los mayores o iguales a 100 ingresarlos al final. Se finaliza la carga de datos al ingresar el cero. Cuando sale del do/while extraer el último valor ingresado que es el cero del vector. Imprimir el vector en la página
 </h5>
+<pre><code>
+  var vec=[];
+  var f;
+  var valor;
+  do {
+    valor=promp('Ingresar un valor (0 para finalizar):','');
+    valor=parseInt(valor);
+    if (valor< 100)
+    {
+      vec.unshift(valor);
+    }
+    else
+    {
+      vec.push(valor);
+    }
+  } while (valor!=0);
+  vec.shift();
+  for(f=0;f< vec.length;f++)
+  {
+    document.write(vec[f]+'< br>');
+  }
+</code></pre>
 <script>
   var vec=[];
   var f;
@@ -606,6 +1088,26 @@
 <hr>
 <hr>
 <h5>utilizando un bucle controlado por un valor centinela.</h5>
+
+<pre><code>
+  var miArray = [];
+
+  var number = '';
+
+  var centinela = 'z';
+
+  while(number.toString().toLowerCase() !== centinela) {
+
+      number = promp("Introduce un número [ "+centinela+" para terminar ]: ");
+
+      if (/^((-|\+)?[0-9]+)$/.exec(number))
+
+        miArray.push(number);
+
+  }
+
+  document.getElementById('numbers').innerHTML= miArray.length ? miArray : 'No se ingresaron números.' ;
+</code></pre>
 <div id="numbers"></div>
 
 <script>
@@ -634,6 +1136,29 @@
 <h5>.-Array: instruccion delete (seccion 5 linea 49) <br>
     Crear un vector de 10 elementos y almacenar valores aleatorios en el mismo. Luego borrar los elementos de las posiciones pares e imprimir el vector antes y después de borrar las componentes, inclusive tratar de acceder a las componentes que acabamos de borrar.
     </h5>
+    <pre><code>
+      var vec=[];
+      var f;
+      for(f=0;f< 10;f++)
+      {
+        var valor=parseInt(Math.random()*1000);
+        vec.push(valor);
+      }
+      document.write('Vector antes de borrar< br>');
+      for(f=0;f< 10;f++)
+      {
+        document.write(vec[f]+'< br>');
+      }
+      for(f=0;f< 10;f=f+2)
+      {
+        delete vec[f];
+      }
+      document.write('Vector luego de borrar las posiciones pares< br>');
+      for(f=0;f< 10;f++)
+      {
+        document.write(vec[f]+'< br>');
+      }
+    </code></pre>
     <script>
         var vec=[];
         var f;
@@ -662,6 +1187,29 @@
 <hr>
 <h5>Crear un vector de 10 elementos y almacenar valores aleatorios en el mismo. Luego borrar los elementos de las posiciones pares e imprimir el vector antes y después de borrar las componentes, inclusive tratar de acceder a las componentes que acabamos de borrar.
   </h5>
+  <pre><code>
+    var vec=[];
+    var f;
+    for(f=0;f< 10;f++)
+    {
+      var valor=parseInt(Math.random()*1000);
+      vec.push(valor);
+    }
+    document.write('Vector antes de borrar< br>');
+    for(f=0;f< 10;f++)
+    {
+      document.write(vec[f]+'< br>');
+    }
+    for(f=0;f< 10;f=f+2)
+    {
+      delete vec[f];
+    }
+    document.write('Vector luego de borrar las posiciones pares< br>');
+    for(f=0;f< 10;f++)
+    {
+      document.write(vec[f]+'< br>');
+    }
+  </code></pre>
   <script>
       var vec=[];
       var f;
@@ -688,8 +1236,28 @@
 <hr>
 <hr>
 <h5>.-Array: metodos sort y reverse (seccion 5 linea 50) <br>
-Crear un vector con 10 elementos enteros con valores aleatorios. Ordenarlos de menor a mayor. Luego invertir el vector para verlo de mayor a menor.
+Crear un vector con 5 elementos enteros con valores aleatorios. Ordenarlos de menor a mayor. Luego invertir el vector para verlo de mayor a menor.
 </h5>
+<pre><code>
+  var vec=[100,5,60,3,90];
+  var f;
+  document.write('Vector antes de ordenarlo< br>');
+  for(f=0;f< vec.length;f++)
+  {
+    document.write(vec[f]+'< br>');
+  }
+  vec.sort(function(v1,v2) {
+    if (v1>v2)
+      return 1;
+    else
+      return 0;
+  });
+  document.write('Vector después de ordenarlo< br>');
+  for(f=0;f< vec.length;f++)
+  {
+    document.write(vec[f]+' ');
+  }
+</code></pre>
 <script>
   var vec=[100,5,60,3,90];
   var f;
@@ -702,12 +1270,12 @@ Crear un vector con 10 elementos enteros con valores aleatorios. Ordenarlos de m
     if (v1>v2)
       return 1;
     else
-      return 0;
+      return -1;
   });
   document.write('Vector después de ordenarlo<br>');
   for(f=0;f<vec.length;f++)
   {
-    document.write(vec[f]+'<br>');
+    document.write(vec[f]+' ');
   }
 </script>
 
@@ -715,7 +1283,35 @@ Crear un vector con 10 elementos enteros con valores aleatorios. Ordenarlos de m
 <hr>
 <h5>Cargar los sueldos de un conjunto de empleados. Finalizar la carga al ingresar cero. Mostrar por pantalla los sueldos ordenados de mayor a menor. 
   </h5>
-
+<pre><code>
+  var sueldos=[];
+  var valor;
+  do {
+    valor=promp('Ingrese el sueldo (cero para finalizar)','');
+    valor=parseInt(valor);
+    if (valor!=0)
+      sueldos.push(valor);
+  } while (valor!=0);
+  
+  sueldos.sort(function(x,y) {
+    if (x>y)
+      return 1;
+    else
+      return 0;
+  });
+ 
+  document.write('Sueldos ordenados de menor a mayor< br>');
+  var f;
+  for(f=0;f< sueldos.length;f++)
+  {
+    document.write(sueldos[f]+'< br>');
+  }
+  sueldos.reverse();
+  document.write('Sueldos ordenados de mayor a menor< br>');
+  for(f=0;f< sueldos.length;f++)
+  {
+    document.write(sueldos[f]+' ');
+</code></pre>
   <script>
       var sueldos=[];
       var valor;

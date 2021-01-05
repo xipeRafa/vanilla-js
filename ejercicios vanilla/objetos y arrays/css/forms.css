@@ -131,17 +131,20 @@ li {
 code {
     padding: 0.2rem 0.5rem;
     margin: 0 0.2rem;
-    font-size: 90%;
+    font-size: 36%;
     white-space: nowrap;
-    background: #f1f1f1;
+    background: #2e2323;
     border: 1px solid #e1e1e1;
     border-radius: 4px;
+    
+    color: rgb(170, 169, 169);
 }
 
 pre>code {
     display: block;
     padding: 1rem 1.5rem;
     white-space: pre;
+    color: rgb(185, 184, 184);
 }
 
 

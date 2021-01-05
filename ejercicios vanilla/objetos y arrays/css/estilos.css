@@ -2,7 +2,11 @@ body {
   background-color:rosybrown;
   width: 80%;
   margin: auto;
-  text-align: center;
+  text-align: left;
+ 
+}
+h5{
+  font-size: 50%;
 }
 
 /*html {
